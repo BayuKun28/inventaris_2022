@@ -2,8 +2,8 @@
     <div class="pull-right hidden-xs">
         <b>Version</b> 1.0
     </div>
-    <strong>Copyright &copy; 2022 <a href="https://bayukun.my.id">BayuKun</a>.</strong> All rights
-    reserved.
+    <strong>Copyright &copy; 2022 All rights
+        reserved.
 </footer>
 
 <!-- Control Sidebar -->
