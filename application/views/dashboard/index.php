@@ -78,4 +78,3 @@
 </div>
 <!-- /.content-wrapper -->
 <?php $this->load->view('templates/footer');  ?>
-<script src="<?= base_url('assets/adminlte/'); ?>dist/js/pages/dashboard2.js"></script>
