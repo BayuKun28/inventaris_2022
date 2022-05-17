@@ -71,7 +71,7 @@ class Laporan extends CI_Controller
 
         $dompdf = new Dompdf();
         $dompdf->setPaper('A4', 'Portrait');
-        $html = $this->load->view('Laporan/cetakpeminjamankendaraan', $data, true);
+        $html = $this->load->view('laporan/cetakpeminjamankendaraan', $data, true);
         $dompdf->load_html($html);
         $dompdf->render();
         $dompdf->stream('Laporan Data Peminjaman Kendaraan Tanggal ' . $xtanggalawal . ' Sampai ' . date('yyyy/mm/dd'), array("Attachment" => false));
@@ -114,7 +114,7 @@ class Laporan extends CI_Controller
 
         $dompdf = new Dompdf();
         $dompdf->setPaper('A4', 'Portrait');
-        $html = $this->load->view('Laporan/cetakpengembaliankendaraan', $data, true);
+        $html = $this->load->view('laporan/cetakpengembaliankendaraan', $data, true);
         $dompdf->load_html($html);
         $dompdf->render();
         $dompdf->stream('Laporan Data Pengembalian Kendaraan Tanggal ' . $xtanggalawal . ' Sampai ' . date('yyyy/mm/dd'), array("Attachment" => false));
@@ -158,7 +158,7 @@ class Laporan extends CI_Controller
 
         $dompdf = new Dompdf();
         $dompdf->setPaper('A4', 'Portrait');
-        $html = $this->load->view('Laporan/cetakpeminjamanelektronik', $data, true);
+        $html = $this->load->view('laporan/cetakpeminjamanelektronik', $data, true);
         $dompdf->load_html($html);
         $dompdf->render();
         $dompdf->stream('Laporan Data Peminjaman Elektronik Tanggal ' . $xtanggalawal . ' Sampai ' . date('yyyy/mm/dd'), array("Attachment" => false));
@@ -211,7 +211,7 @@ class Laporan extends CI_Controller
 
         $dompdf = new Dompdf();
         $dompdf->setPaper('A4', 'Portrait');
-        $html = $this->load->view('Laporan/cetakpengembalianelektronik', $data, true);
+        $html = $this->load->view('laporan/cetakpengembalianelektronik', $data, true);
         $dompdf->load_html($html);
         $dompdf->render();
         $dompdf->stream('Laporan Data Pengembalian Elektronik Tanggal ' . $xtanggalawal . ' Sampai ' . date('yyyy/mm/dd'), array("Attachment" => false));
