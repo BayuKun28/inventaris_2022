@@ -17,6 +17,7 @@
                         <th>No</th>
                         <th>Nama Peminjam</th>
                         <th>Nama Unit</th>
+                        <th>Nama Barang</th>
                         <th>Tanggal Pinjam</th>
                         <th>Keterangan</th>
                     </tr>
@@ -28,6 +29,7 @@
                             <td><?= $i; ?></td>
                             <td><?= $b['nama']; ?></td>
                             <td><?= $b['nama_unit']; ?></td>
+                            <td><?= $b['nama_barang']; ?></td>
                             <td><?= $b['tgl_pinjam']; ?></td>
                             <td><?= $b['keterangan']; ?></td>
                         </tr>

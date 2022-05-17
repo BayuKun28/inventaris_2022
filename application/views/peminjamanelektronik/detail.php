@@ -2,10 +2,10 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            Detail Peminjaman Kendaraan
+            Detail Peminjaman Elektronik
         </h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i>Peminjaman Kendaraan</a></li>
+            <li><a href="#"><i class="fa fa-dashboard"></i>Peminjaman Elektronik</a></li>
             <li class="active">Detail</li>
         </ol>
     </section>
@@ -58,7 +58,7 @@
                                             </div>
                                             <input type="text" class="form-control" value="<?= $info['tgl_kembali']; ?>" disabled>
                                         </div>
-                                        <label for="file">File Kendaraan</label>
+                                        <label for="file">File Elektronik</label>
                                         <div>
                                             <span><?= $info['image']; ?></span>
                                         </div>
@@ -81,9 +81,16 @@
                                     <label>Nama Unit</label>
                                     <div class="input-group">
                                         <div class="input-group-addon">
-                                            <i class="fa fa-laptop"></i>
+                                            <i class="fa fa-home"></i>
                                         </div>
                                         <input type="text" class="form-control" value="<?= $info['nama_unit']; ?>" disabled>
+                                    </div>
+                                    <label>Nama Barang</label>
+                                    <div class="input-group">
+                                        <div class="input-group-addon">
+                                            <i class="fa fa-laptop"></i>
+                                        </div>
+                                        <input type="text" class="form-control" value="<?= $info['nama_barang']; ?>" disabled>
                                     </div>
                                     <label>Nomor Seri Barang</label>
                                     <div class="input-group">

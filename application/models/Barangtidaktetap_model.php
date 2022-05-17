@@ -5,7 +5,7 @@ class Barangtidaktetap_model extends CI_Model
 {
     public function read()
     {
-        $query = "SELECT * FROM barang_tidak_tetap";
+        $query = "SELECT * FROM barang_tidak_tetap ORDER BY id DESC";
         return $this->db->query($query)->result_array();
         echo json_encode($query);
     }

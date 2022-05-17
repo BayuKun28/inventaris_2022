@@ -31,14 +31,18 @@
                                         </select>
                                     </div>
                                     <div class="col-md-6">
-                                        <label for="nama_unit">Nama Barang</label>
-                                        <select id="nama_unit" name="nama_unit" class="itemNama_unit form-control" required>
+                                        <label for="nama_barang">Nama Barang</label>
+                                        <select id="nama_barang" name="nama_barang" class="itemNama_barang form-control" required>
                                         </select>
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="row">
+                                    <div class="col-md-6">
+                                        <label for="nama_unit">Nama Unit</label>
+                                        <input type="text" class="form-control" id="nama_unit" name="nama_unit" required>
+                                    </div>
                                     <div class="col-md-6">
                                         <label for="tgl_pinjam">Tanggal Pinjam</label>
                                         <input type="date" class="form-control" id="tgl_pinjam" name="tgl_pinjam" required>
@@ -64,10 +68,10 @@
 <?php $this->load->view('templates/footer'); ?>
 <script>
     $(function() {
-        $('.itemNama_unit').select2({
+        $('.itemNama_barang').select2({
             width: '100%',
             ajax: {
-                url: "<?= base_url(); ?>/Peminjamanelektronik/getnamaunit",
+                url: "<?= base_url(); ?>/Peminjamanelektronik/getnamabarang",
                 dataType: "json",
                 delay: 250,
                 data: function(params) {

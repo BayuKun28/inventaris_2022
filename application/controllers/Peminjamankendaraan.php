@@ -45,6 +45,7 @@ class Peminjamankendaraan extends CI_Controller
         $data = array(
             'nama' => $this->input->post('nama_peminjam'),
             'nama_unit' => $this->input->post('nama_unit'),
+            'nama_barang' => $this->input->post('nama_barang'),
             'tgl_pinjam' => $this->input->post('tgl_pinjam'),
             'keterangan' => $this->input->post('keterangan'),
             'jenis_pinjam' => 1
@@ -55,7 +56,7 @@ class Peminjamankendaraan extends CI_Controller
         $data2 = array(
             'status' => 1
         );
-        $idupdate = $this->input->post('nama_unit');
+        $idupdate = $this->input->post('nama_barang');
         $this->db->where('id', $idupdate);
         $this->db->update('kendaraan', $data2);
         $this->session->set_flashdata('message', 'Berhasil Ditambah');
@@ -71,7 +72,7 @@ class Peminjamankendaraan extends CI_Controller
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar', $data);
-        $this->load->view('Peminjamankendaraan/detail', $data);
+        $this->load->view('peminjamankendaraan/detail', $data);
     }
 
     public function kembali()
@@ -83,24 +84,17 @@ class Peminjamankendaraan extends CI_Controller
         $this->db->where('id', $id);
         $this->db->update('peminjaman', $data);
 
-        $idunit = $this->input->post('idunit');
+        $idbarang = $this->input->post('idbarang');
         $data2 = array(
             'status' => 0
         );
-        $this->db->where('id', $idunit);
+        $this->db->where('id', $idbarang);
         $this->db->update('kendaraan', $data2);
         $this->session->set_flashdata('message', 'Berhasil Dikembalikan');
         redirect('Peminjamankendaraan');
     }
 
-    public function delete($id)
-    {
-        $this->db->where('id', $id);
-        $this->db->delete('kendaraan');
-        $this->session->set_flashdata('message', 'Berhasil Dihapus');
-        redirect('Kendaraan');
-    }
-    public function getnamaunit()
+    public function getnamabarang()
     {
         $un = $this->input->get('un');
         $query = $this->kendaraan_model->getkendaraan2($un, 'no_pol');

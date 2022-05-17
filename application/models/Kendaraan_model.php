@@ -23,7 +23,7 @@ class Kendaraan_model extends CI_Model
                 LEFT JOIN unit_pengguna up on up.id = k.unit_pengguna
                 LEFT JOIN kondisi kr on kr.id = k.kondisi_ranmor
                 LEFT JOIN jenis_bbm jb on jb.id = k.jenis_bbm
-            ORDER BY k.id ASC";
+            ORDER BY k.id DESC";
         return $this->db->query($query)->result_array();
         echo json_encode($query);
     }

@@ -45,6 +45,7 @@ class Peminjamanelektronik extends CI_Controller
     {
         $data = array(
             'nama' => $this->input->post('nama_peminjam'),
+            'nama_barang' => $this->input->post('nama_barang'),
             'nama_unit' => $this->input->post('nama_unit'),
             'tgl_pinjam' => $this->input->post('tgl_pinjam'),
             'keterangan' => $this->input->post('keterangan'),
@@ -53,7 +54,7 @@ class Peminjamanelektronik extends CI_Controller
 
         $this->db->insert('peminjaman', $data);
 
-        $idupdate = $this->input->post('nama_unit');
+        $idupdate = $this->input->post('nama_barang');
 
         $stok = $this->peminjamanelektronik_model->getStok($idupdate)->jumlah;
         $rumus = max($stok - 1, 0);
@@ -89,15 +90,15 @@ class Peminjamanelektronik extends CI_Controller
         $this->db->where('id', $id);
         $this->db->update('peminjaman', $data);
 
-        $idunit = $this->input->post('idunit');
+        $idbarang = $this->input->post('idbarang');
 
-        $stok = $this->peminjamanelektronik_model->getStok($idunit)->jumlah;
+        $stok = $this->peminjamanelektronik_model->getStok($idbarang)->jumlah;
         $rumus = max($stok + 1, 0);
         $data2 = array(
             'jumlah' => $rumus
         );
 
-        $this->db->where('id', $idunit);
+        $this->db->where('id', $idbarang);
         $this->db->update('elektronik', $data2);
         $this->session->set_flashdata('message', 'Berhasil Dikembalikan');
         redirect('Peminjamanelektronik');
@@ -110,7 +111,7 @@ class Peminjamanelektronik extends CI_Controller
         $this->session->set_flashdata('message', 'Berhasil Dihapus');
         redirect('Kendaraan');
     }
-    public function getnamaunit()
+    public function getnamabarang()
     {
         $un = $this->input->get('un');
         $query = $this->elektronik_model->getelektronik2($un, 'nama_barang');

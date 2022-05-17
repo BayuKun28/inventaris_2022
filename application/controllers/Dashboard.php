@@ -18,6 +18,9 @@ class Dashboard extends CI_Controller
         $data['barangtetap'] = $this->dashboard_model->hitungbarangtetap();
         $data['barangtidaktetap'] = $this->dashboard_model->hitungbarangtidak();
         $data['petugas'] = $this->dashboard_model->hitungpetugas();
+        $data['chartdonut'] = $this->dashboard_model->chartdonut();
+        $data['chartarea'] = $this->dashboard_model->chartarea();
+        $data['chartarea2'] = $this->dashboard_model->chartarea2();
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar', $data);

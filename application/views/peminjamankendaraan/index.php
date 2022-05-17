@@ -30,6 +30,7 @@
                                     <th>No</th>
                                     <th>Nama Peminjam</th>
                                     <th>Nama Unit</th>
+                                    <th>Nama Barang</th>
                                     <th>Tanggal Pinjam</th>
                                     <th>Keterangan</th>
                                     <th>Status</th>
@@ -43,13 +44,14 @@
                                         <td><?= $i; ?></td>
                                         <td><?= $b['nama']; ?></td>
                                         <td><?= $b['nama_unit']; ?></td>
+                                        <td><?= $b['nama_barang']; ?></td>
                                         <td><?= $b['tgl_pinjam']; ?></td>
                                         <td><?= $b['keterangan']; ?></td>
                                         <td><?php
                                             if (!empty($b['tgl_kembali'])) {
                                                 echo " <a class='btn btn-sm btn-success'><i class='fa fa-check-circle'></i> Dikembalikan</a>";
                                             } else {
-                                                echo " <a id='kembali' class='btn btn-sm btn-danger' data-toggle='modal' data-target='#modal-kembali' data-idkembali='" . $b['id'] . "' data-idunit='" . $b['idunit'] . "' ><i class='fa fa-close'></i> Dipinjam</a>";
+                                                echo " <a id='kembali' class='btn btn-sm btn-danger' data-toggle='modal' data-target='#modal-kembali' data-idkembali='" . $b['id'] . "' data-idbarang='" . $b['idbarang'] . "' ><i class='fa fa-close'></i> Dipinjam</a>";
                                             }
                                             ?></td>
                                         <td><a href="<?= base_url('Peminjamankendaraan/detail/') . $b['id']; ?>" class="btn btn-sm btn-primary"><i class="fa fa-book"></i></a></td>
@@ -84,7 +86,7 @@
                                 <div class="col-md-12">
                                     <label for="tgl_kembali">Tanggal Kembali</label>
                                     <input type="hidden" class="form-control" id="idkembali" name="idkembali">
-                                    <input type="hidden" class="form-control" id="idunit" name="idunit">
+                                    <input type="hidden" class="form-control" id="idbarang" name="idbarang">
                                     <input type="date" class="form-control" id="tgl_kembali" name="tgl_kembali" required>
                                 </div>
                             </div>
@@ -111,9 +113,9 @@
     $(document).ready(function() {
         $(document).on('click', '#kembali', function() {
             var idkembali = $(this).data('idkembali');
-            var idunit = $(this).data('idunit');
+            var idbarang = $(this).data('idbarang');
             $('#idkembali').val(idkembali);
-            $('#idunit').val(idunit);
+            $('#idbarang').val(idbarang);
         })
     })
 </script>

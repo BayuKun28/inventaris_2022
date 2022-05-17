@@ -62,9 +62,16 @@
                                     <label>Nama Unit</label>
                                     <div class="input-group">
                                         <div class="input-group-addon">
-                                            <i class="fa fa-laptop"></i>
+                                            <i class="fa fa-home"></i>
                                         </div>
                                         <input type="text" class="form-control" value="<?= $info['nama_unit']; ?>" disabled>
+                                    </div>
+                                    <label>Nama Barang</label>
+                                    <div class="input-group">
+                                        <div class="input-group-addon">
+                                            <i class="fa fa-laptop"></i>
+                                        </div>
+                                        <input type="text" class="form-control" value="<?= $info['nama_barang']; ?>" disabled>
                                     </div>
                                     <label>Nomor Seri Barang</label>
                                     <div class="input-group">
